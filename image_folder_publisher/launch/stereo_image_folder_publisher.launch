@@ -1,11 +1,9 @@
 <launch>
-  <param name="publish_rate" value="60" />
-  <node name="left_cam" pkg="image_folder_publisher" type="image_folder_publisher.py" >
-    <param name="image_folder" value="$(find image_folder_publisher)/data/image_00/data" />
-    <param name="topic_name" value="/left_image" />
-  </node>
-  <node name="right_cam" pkg="image_folder_publisher" type="image_folder_publisher.py" >
-    <param name="image_folder" value="$(find image_folder_publisher)/data/image_01/data" />
-    <param name="topic_name" value="/right_image" />
+  <node name="left_cam" pkg="image_folder_publisher" type="image_folder_publisher.py" output="screen">
+    <param name="image_folder_left" value="$(find image_folder_publisher)/data/image_00/data" />
+    <param name="image_folder_right" value="$(find image_folder_publisher)/data/image_01/data" />
+    <param name="topic_name_left" value="/left_image" />
+    <param name="topic_name_right" value="/right_image" />
+    <param name="publish_rate" value="30" />
   </node>
 </launch>
