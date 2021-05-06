@@ -67,10 +67,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ludvig/maskinsyn/lab_07
+CMAKE_SOURCE_DIR = /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ludvig/maskinsyn/lab_07
+CMAKE_BINARY_DIR = /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ludvig/maskinsyn/lab_07/CMakeFiles /home/ludvig/maskinsyn/lab_07//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ludvig/maskinsyn/lab_07/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -130,17 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named lab_7_stereo
+# Target rules for targets named lab_7_stereo_new_pics
 
 # Build rule for target.
-lab_7_stereo: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab_7_stereo
-.PHONY : lab_7_stereo
+lab_7_stereo_new_pics: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab_7_stereo_new_pics
+.PHONY : lab_7_stereo_new_pics
 
 # fast build rule for target.
-lab_7_stereo/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/build
-.PHONY : lab_7_stereo/fast
+lab_7_stereo_new_pics/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/build
+.PHONY : lab_7_stereo_new_pics/fast
 
 cv_stereo_matcher_wrap.o: cv_stereo_matcher_wrap.cpp.o
 
@@ -148,7 +148,7 @@ cv_stereo_matcher_wrap.o: cv_stereo_matcher_wrap.cpp.o
 
 # target to build an object file
 cv_stereo_matcher_wrap.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/cv_stereo_matcher_wrap.cpp.o
 .PHONY : cv_stereo_matcher_wrap.cpp.o
 
 cv_stereo_matcher_wrap.i: cv_stereo_matcher_wrap.cpp.i
@@ -157,7 +157,7 @@ cv_stereo_matcher_wrap.i: cv_stereo_matcher_wrap.cpp.i
 
 # target to preprocess a source file
 cv_stereo_matcher_wrap.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/cv_stereo_matcher_wrap.cpp.i
 .PHONY : cv_stereo_matcher_wrap.cpp.i
 
 cv_stereo_matcher_wrap.s: cv_stereo_matcher_wrap.cpp.s
@@ -166,7 +166,7 @@ cv_stereo_matcher_wrap.s: cv_stereo_matcher_wrap.cpp.s
 
 # target to generate assembly for a file
 cv_stereo_matcher_wrap.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/cv_stereo_matcher_wrap.cpp.s
 .PHONY : cv_stereo_matcher_wrap.cpp.s
 
 lab_7.o: lab_7.cpp.o
@@ -175,7 +175,7 @@ lab_7.o: lab_7.cpp.o
 
 # target to build an object file
 lab_7.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/lab_7.cpp.o
 .PHONY : lab_7.cpp.o
 
 lab_7.i: lab_7.cpp.i
@@ -184,7 +184,7 @@ lab_7.i: lab_7.cpp.i
 
 # target to preprocess a source file
 lab_7.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/lab_7.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/lab_7.cpp.i
 .PHONY : lab_7.cpp.i
 
 lab_7.s: lab_7.cpp.s
@@ -193,7 +193,7 @@ lab_7.s: lab_7.cpp.s
 
 # target to generate assembly for a file
 lab_7.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/lab_7.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/lab_7.cpp.s
 .PHONY : lab_7.cpp.s
 
 main.o: main.cpp.o
@@ -202,7 +202,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -211,7 +211,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -220,7 +220,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 sparse_stereo_matcher.o: sparse_stereo_matcher.cpp.o
@@ -229,7 +229,7 @@ sparse_stereo_matcher.o: sparse_stereo_matcher.cpp.o
 
 # target to build an object file
 sparse_stereo_matcher.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/sparse_stereo_matcher.cpp.o
 .PHONY : sparse_stereo_matcher.cpp.o
 
 sparse_stereo_matcher.i: sparse_stereo_matcher.cpp.i
@@ -238,7 +238,7 @@ sparse_stereo_matcher.i: sparse_stereo_matcher.cpp.i
 
 # target to preprocess a source file
 sparse_stereo_matcher.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/sparse_stereo_matcher.cpp.i
 .PHONY : sparse_stereo_matcher.cpp.i
 
 sparse_stereo_matcher.s: sparse_stereo_matcher.cpp.s
@@ -247,7 +247,7 @@ sparse_stereo_matcher.s: sparse_stereo_matcher.cpp.s
 
 # target to generate assembly for a file
 sparse_stereo_matcher.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/sparse_stereo_matcher.cpp.s
 .PHONY : sparse_stereo_matcher.cpp.s
 
 stereo_calibration.o: stereo_calibration.cpp.o
@@ -256,7 +256,7 @@ stereo_calibration.o: stereo_calibration.cpp.o
 
 # target to build an object file
 stereo_calibration.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/stereo_calibration.cpp.o
 .PHONY : stereo_calibration.cpp.o
 
 stereo_calibration.i: stereo_calibration.cpp.i
@@ -265,7 +265,7 @@ stereo_calibration.i: stereo_calibration.cpp.i
 
 # target to preprocess a source file
 stereo_calibration.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/stereo_calibration.cpp.i
 .PHONY : stereo_calibration.cpp.i
 
 stereo_calibration.s: stereo_calibration.cpp.s
@@ -274,7 +274,7 @@ stereo_calibration.s: stereo_calibration.cpp.s
 
 # target to generate assembly for a file
 stereo_calibration.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/stereo_calibration.cpp.s
 .PHONY : stereo_calibration.cpp.s
 
 viewer_3d.o: viewer_3d.cpp.o
@@ -283,7 +283,7 @@ viewer_3d.o: viewer_3d.cpp.o
 
 # target to build an object file
 viewer_3d.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/viewer_3d.cpp.o
 .PHONY : viewer_3d.cpp.o
 
 viewer_3d.i: viewer_3d.cpp.i
@@ -292,7 +292,7 @@ viewer_3d.i: viewer_3d.cpp.i
 
 # target to preprocess a source file
 viewer_3d.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/viewer_3d.cpp.i
 .PHONY : viewer_3d.cpp.i
 
 viewer_3d.s: viewer_3d.cpp.s
@@ -301,7 +301,7 @@ viewer_3d.s: viewer_3d.cpp.s
 
 # target to generate assembly for a file
 viewer_3d.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/viewer_3d.cpp.s
 .PHONY : viewer_3d.cpp.s
 
 visualization.o: visualization.cpp.o
@@ -310,7 +310,7 @@ visualization.o: visualization.cpp.o
 
 # target to build an object file
 visualization.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/visualization.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/visualization.cpp.o
 .PHONY : visualization.cpp.o
 
 visualization.i: visualization.cpp.i
@@ -319,7 +319,7 @@ visualization.i: visualization.cpp.i
 
 # target to preprocess a source file
 visualization.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/visualization.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/visualization.cpp.i
 .PHONY : visualization.cpp.i
 
 visualization.s: visualization.cpp.s
@@ -328,7 +328,7 @@ visualization.s: visualization.cpp.s
 
 # target to generate assembly for a file
 visualization.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo.dir/build.make CMakeFiles/lab_7_stereo.dir/visualization.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_7_stereo_new_pics.dir/build.make CMakeFiles/lab_7_stereo_new_pics.dir/visualization.cpp.s
 .PHONY : visualization.cpp.s
 
 # Help Target
@@ -339,7 +339,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... lab_7_stereo"
+	@echo "... lab_7_stereo_new_pics"
 	@echo "... cv_stereo_matcher_wrap.o"
 	@echo "... cv_stereo_matcher_wrap.i"
 	@echo "... cv_stereo_matcher_wrap.s"

@@ -19,8 +19,8 @@ using namespace tek5030;
 void lab7()
 {
   // TODO 0: Fill in correct paths to the kitti dataset.
-  const std::string dataset_path{"/home/ludvig/2011_09_28/2011_09_28_drive_0016_extract"};
-  const std::string calib_path{"/home/ludvig/2011_09_28"};
+  const std::string dataset_path{"/home/ludvig/maskinsyn/data"}; //change to your local pictures
+  const std::string calib_path{"/home/ludvig/maskinsyn/calibration"}; //Should be in folder!
   const bool color = false;
 
   KittiCamera camera(dataset_path, calib_path, color);

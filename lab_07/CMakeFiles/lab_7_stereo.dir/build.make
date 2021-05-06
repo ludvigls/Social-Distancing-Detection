@@ -62,10 +62,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ludvig/maskinsyn/lab_07
+CMAKE_SOURCE_DIR = /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ludvig/maskinsyn/lab_07
+CMAKE_BINARY_DIR = /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07
 
 # Include any dependencies generated for this target.
 include CMakeFiles/lab_7_stereo.dir/depend.make
@@ -78,94 +78,94 @@ include CMakeFiles/lab_7_stereo.dir/flags.make
 
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: CMakeFiles/lab_7_stereo.dir/flags.make
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: lab_7.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ludvig/maskinsyn/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o -c /home/ludvig/maskinsyn/lab_07/lab_7.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o -c /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/lab_7.cpp
 
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab_7_stereo.dir/lab_7.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ludvig/maskinsyn/lab_07/lab_7.cpp > CMakeFiles/lab_7_stereo.dir/lab_7.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/lab_7.cpp > CMakeFiles/lab_7_stereo.dir/lab_7.cpp.i
 
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab_7_stereo.dir/lab_7.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ludvig/maskinsyn/lab_07/lab_7.cpp -o CMakeFiles/lab_7_stereo.dir/lab_7.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/lab_7.cpp -o CMakeFiles/lab_7_stereo.dir/lab_7.cpp.s
 
 CMakeFiles/lab_7_stereo.dir/main.cpp.o: CMakeFiles/lab_7_stereo.dir/flags.make
 CMakeFiles/lab_7_stereo.dir/main.cpp.o: main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ludvig/maskinsyn/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lab_7_stereo.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab_7_stereo.dir/main.cpp.o -c /home/ludvig/maskinsyn/lab_07/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lab_7_stereo.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab_7_stereo.dir/main.cpp.o -c /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/main.cpp
 
 CMakeFiles/lab_7_stereo.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab_7_stereo.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ludvig/maskinsyn/lab_07/main.cpp > CMakeFiles/lab_7_stereo.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/main.cpp > CMakeFiles/lab_7_stereo.dir/main.cpp.i
 
 CMakeFiles/lab_7_stereo.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab_7_stereo.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ludvig/maskinsyn/lab_07/main.cpp -o CMakeFiles/lab_7_stereo.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/main.cpp -o CMakeFiles/lab_7_stereo.dir/main.cpp.s
 
 CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o: CMakeFiles/lab_7_stereo.dir/flags.make
 CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o: sparse_stereo_matcher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ludvig/maskinsyn/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o -c /home/ludvig/maskinsyn/lab_07/sparse_stereo_matcher.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o -c /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/sparse_stereo_matcher.cpp
 
 CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ludvig/maskinsyn/lab_07/sparse_stereo_matcher.cpp > CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/sparse_stereo_matcher.cpp > CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.i
 
 CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ludvig/maskinsyn/lab_07/sparse_stereo_matcher.cpp -o CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/sparse_stereo_matcher.cpp -o CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.s
 
 CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o: CMakeFiles/lab_7_stereo.dir/flags.make
 CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o: stereo_calibration.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ludvig/maskinsyn/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o -c /home/ludvig/maskinsyn/lab_07/stereo_calibration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o -c /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/stereo_calibration.cpp
 
 CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ludvig/maskinsyn/lab_07/stereo_calibration.cpp > CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/stereo_calibration.cpp > CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.i
 
 CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ludvig/maskinsyn/lab_07/stereo_calibration.cpp -o CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/stereo_calibration.cpp -o CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.s
 
 CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o: CMakeFiles/lab_7_stereo.dir/flags.make
 CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o: viewer_3d.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ludvig/maskinsyn/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o -c /home/ludvig/maskinsyn/lab_07/viewer_3d.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o -c /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/viewer_3d.cpp
 
 CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ludvig/maskinsyn/lab_07/viewer_3d.cpp > CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/viewer_3d.cpp > CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.i
 
 CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ludvig/maskinsyn/lab_07/viewer_3d.cpp -o CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/viewer_3d.cpp -o CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.s
 
 CMakeFiles/lab_7_stereo.dir/visualization.cpp.o: CMakeFiles/lab_7_stereo.dir/flags.make
 CMakeFiles/lab_7_stereo.dir/visualization.cpp.o: visualization.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ludvig/maskinsyn/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/lab_7_stereo.dir/visualization.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab_7_stereo.dir/visualization.cpp.o -c /home/ludvig/maskinsyn/lab_07/visualization.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/lab_7_stereo.dir/visualization.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab_7_stereo.dir/visualization.cpp.o -c /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/visualization.cpp
 
 CMakeFiles/lab_7_stereo.dir/visualization.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab_7_stereo.dir/visualization.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ludvig/maskinsyn/lab_07/visualization.cpp > CMakeFiles/lab_7_stereo.dir/visualization.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/visualization.cpp > CMakeFiles/lab_7_stereo.dir/visualization.cpp.i
 
 CMakeFiles/lab_7_stereo.dir/visualization.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab_7_stereo.dir/visualization.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ludvig/maskinsyn/lab_07/visualization.cpp -o CMakeFiles/lab_7_stereo.dir/visualization.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/visualization.cpp -o CMakeFiles/lab_7_stereo.dir/visualization.cpp.s
 
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: CMakeFiles/lab_7_stereo.dir/flags.make
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: cv_stereo_matcher_wrap.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ludvig/maskinsyn/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o -c /home/ludvig/maskinsyn/lab_07/cv_stereo_matcher_wrap.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o -c /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/cv_stereo_matcher_wrap.cpp
 
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ludvig/maskinsyn/lab_07/cv_stereo_matcher_wrap.cpp > CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/cv_stereo_matcher_wrap.cpp > CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.i
 
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ludvig/maskinsyn/lab_07/cv_stereo_matcher_wrap.cpp -o CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/cv_stereo_matcher_wrap.cpp -o CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.s
 
 # Object files for target lab_7_stereo
 lab_7_stereo_OBJECTS = \
@@ -239,7 +239,7 @@ lab_7_stereo: /usr/local/lib/libopencv_imgcodecs.so.4.0.1
 lab_7_stereo: /usr/local/lib/libopencv_imgproc.so.4.0.1
 lab_7_stereo: /usr/local/lib/libopencv_core.so.4.0.1
 lab_7_stereo: CMakeFiles/lab_7_stereo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ludvig/maskinsyn/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable lab_7_stereo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable lab_7_stereo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lab_7_stereo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -252,6 +252,6 @@ CMakeFiles/lab_7_stereo.dir/clean:
 .PHONY : CMakeFiles/lab_7_stereo.dir/clean
 
 CMakeFiles/lab_7_stereo.dir/depend:
-	cd /home/ludvig/maskinsyn/lab_07 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ludvig/maskinsyn/lab_07 /home/ludvig/maskinsyn/lab_07 /home/ludvig/maskinsyn/lab_07 /home/ludvig/maskinsyn/lab_07 /home/ludvig/maskinsyn/lab_07/CMakeFiles/lab_7_stereo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07 /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07 /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07 /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07 /home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles/lab_7_stereo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/lab_7_stereo.dir/depend
 

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5.1)
-project(lab_7_stereo)
+project(lab_7_stereo_new_pics)
 
 if(MSVC)
   set(compiler_options /W4)

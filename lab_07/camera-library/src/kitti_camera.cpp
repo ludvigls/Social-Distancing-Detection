@@ -30,10 +30,10 @@ KittiCamera::KittiCamera(
   : color_{color}
   , left_cap_{dataset_path + '/' + kitti::camera_folder
               + (color ? kitti::color_left_cam : kitti::gray_left_cam)
-              + '/' + kitti::data_folder + '/' + "0%09d.png"}
+              + '/' + kitti::data_folder + '/' + "image_0%08d_0.png"}
   , right_cap_{dataset_path + '/' + kitti::camera_folder
                + (color ? kitti::color_right_cam : kitti::gray_right_cam)
-               + '/' + kitti::data_folder + '/' + "0%09d.png"}
+               + '/' + kitti::data_folder + '/' + "image_0%08d_1.png"}
   , calibration_map_{kitti::loadCamToCamCalibration(calib_path + '/' + kitti::fname_calib_cam_to_cam)}
 {
   std::cout << "path: " << std::string{dataset_path + '/' + kitti::camera_folder

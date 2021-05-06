@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ludvig/maskinsyn/lab_07/cv_stereo_matcher_wrap.cpp" "/home/ludvig/maskinsyn/lab_07/CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o"
-  "/home/ludvig/maskinsyn/lab_07/lab_7.cpp" "/home/ludvig/maskinsyn/lab_07/CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o"
-  "/home/ludvig/maskinsyn/lab_07/main.cpp" "/home/ludvig/maskinsyn/lab_07/CMakeFiles/lab_7_stereo.dir/main.cpp.o"
-  "/home/ludvig/maskinsyn/lab_07/sparse_stereo_matcher.cpp" "/home/ludvig/maskinsyn/lab_07/CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o"
-  "/home/ludvig/maskinsyn/lab_07/stereo_calibration.cpp" "/home/ludvig/maskinsyn/lab_07/CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o"
-  "/home/ludvig/maskinsyn/lab_07/viewer_3d.cpp" "/home/ludvig/maskinsyn/lab_07/CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o"
-  "/home/ludvig/maskinsyn/lab_07/visualization.cpp" "/home/ludvig/maskinsyn/lab_07/CMakeFiles/lab_7_stereo.dir/visualization.cpp.o"
+  "/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/cv_stereo_matcher_wrap.cpp" "/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o"
+  "/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/lab_7.cpp" "/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o"
+  "/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/main.cpp" "/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles/lab_7_stereo.dir/main.cpp.o"
+  "/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/sparse_stereo_matcher.cpp" "/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o"
+  "/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/stereo_calibration.cpp" "/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o"
+  "/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/viewer_3d.cpp" "/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o"
+  "/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/visualization.cpp" "/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles/lab_7_stereo.dir/visualization.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

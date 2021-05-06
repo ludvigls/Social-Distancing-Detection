@@ -7,9 +7,9 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "CMakeFiles/3.19.3/CMakeCCompiler.cmake"
-  "CMakeFiles/3.19.3/CMakeCXXCompiler.cmake"
-  "CMakeFiles/3.19.3/CMakeSystem.cmake"
+  "CMakeFiles/3.19.5/CMakeCCompiler.cmake"
+  "CMakeFiles/3.19.5/CMakeCXXCompiler.cmake"
+  "CMakeFiles/3.19.5/CMakeSystem.cmake"
   "CMakeLists.txt"
   "/usr/local/lib/cmake/opencv4/OpenCVConfig-version.cmake"
   "/usr/local/lib/cmake/opencv4/OpenCVConfig.cmake"
@@ -54,5 +54,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/lab_7_stereo.dir/DependInfo.cmake"
+  "CMakeFiles/lab_7_stereo_new_pics.dir/DependInfo.cmake"
   )
