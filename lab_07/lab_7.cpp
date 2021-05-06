@@ -19,8 +19,8 @@ using namespace tek5030;
 void lab7()
 {
   // TODO 0: Fill in correct paths to the kitti dataset.
-  const std::string dataset_path{"/home/ludvig/2011_09_28/2011_09_28_drive_0016_extract"};
-  const std::string calib_path{"/home/ludvig/2011_09_28"};
+  const std::string dataset_path{"2011_09_28_drive_0045_extract/2011_09_28/2011_09_28_drive_0045_extract"};
+  const std::string calib_path{"2011_09_28_calib/2011_09_28"};
   const bool color = false;
 
   KittiCamera camera(dataset_path, calib_path, color);
@@ -76,32 +76,36 @@ void lab7()
         };
         // TODO (3/7): Compute the depth.
         const auto disparity = d_vec[2];
-        const auto depth = calibration.f()*calibration.baseline()/disparity;
+        const auto depth =  calibration.f() * (calibration.baseline() / disparity);
 
         addDepthPoint(visualized_depths, pixel_pos, depth);
 
         // TODO (5/7): Get point intensity from corresponding pixel in stereo_rectified.left.
-        point_colors.push_back(stereo_rectified.left.at<uint8_t>(pixel_pos));
+        point_colors.push_back(stereo_rectified.left.at<uint8_t>(d_vec[0], d_vec[1])); 
       }
       cv::imshow(depth_win, visualized_depths);
 
       // TODO (4/7): Use cv::perspectiveTransform() to compute the 3D point cloud.
+
+
       std::vector<cv::Vec3d> world_points(point_colors.size());
-      cv::perspectiveTransform(stereo_matcher.point_disparities(),world_points,calibration.Q());
+                  
+      cv::perspectiveTransform(stereo_matcher.point_disparities(), world_points, calibration.Q());
 
       viewer_3d.addPointCloud(world_points, point_colors);
     }
 
    {  // Dense stereo matching using OpenCV
       // TODO (6/7): Create a cv::Ptr<cv::stereo::StereoMatcher>
-      cv::Ptr<cv::stereo::StereoMatcher> ptr = cv::stereo::StereoBinarySGBM::create(0, 192, 5);
+
+      cv::Ptr<cv::stereo::StereoMatcher> ptr = cv::stereo::StereoBinarySGBM::create(0, 128, 5); //mindisp, numdisp (16), blocksize(3)
 
       CvStereoMatcherWrap dense_matcher(ptr);
       const auto dense_disparity = dense_matcher.compute(stereo_rectified);
       if (!dense_disparity.empty())
       {
         // TODO (7/7): Compute depth in meters. Hint: same as todo 3, but without a loop
-        cv::Mat dense_depth =   calibration.f()*calibration.baseline()/dense_disparity;
+        cv::Mat dense_depth = calibration.f() * (calibration.baseline() / dense_disparity); // dense_disparity;
         constexpr float max_depth = 50.f;
         dense_depth.setTo(0, (dense_disparity < 0) | (dense_depth > max_depth));
         dense_depth /= max_depth;
