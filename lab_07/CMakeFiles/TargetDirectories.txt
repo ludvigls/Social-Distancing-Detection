@@ -1,3 +1,0 @@
-/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles/rebuild_cache.dir
-/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles/lab_7_stereo_new_pics.dir
-/home/ludvig/maskinsyn/Social-Distancing-TEK5030/lab_07/CMakeFiles/edit_cache.dir

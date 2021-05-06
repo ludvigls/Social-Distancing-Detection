@@ -19,8 +19,8 @@ using namespace tek5030;
 void lab7()
 {
   // TODO 0: Fill in correct paths to the kitti dataset.
-  const std::string dataset_path{"/home/ludvig/maskinsyn/data"}; //change to your local pictures
-  const std::string calib_path{"/home/ludvig/maskinsyn/calibration"}; //Should be in folder!
+  const std::string dataset_path{"/home/ludvig/2011_09_28/2011_09_28_drive_0016_extract"};
+  const std::string calib_path{"/home/ludvig/2011_09_28"};
   const bool color = false;
 
   KittiCamera camera(dataset_path, calib_path, color);
@@ -101,7 +101,7 @@ void lab7()
       if (!dense_disparity.empty())
       {
         // TODO (7/7): Compute depth in meters. Hint: same as todo 3, but without a loop
-        cv::Mat dense_depth = calibration.f()*calibration.baseline()/dense_disparity;
+        cv::Mat dense_depth =   calibration.f()*calibration.baseline()/dense_disparity;
         constexpr float max_depth = 50.f;
         dense_depth.setTo(0, (dense_disparity < 0) | (dense_depth > max_depth));
         dense_depth /= max_depth;
