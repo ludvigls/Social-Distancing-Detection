@@ -77,7 +77,7 @@ class image_folder_publisher:
                                 ros_msg_left.header.frame_id = self._frame_id
                                 ros_msg_left.header.stamp = rospy.Time.now()
                                 self._image_publisher_left.publish(ros_msg_left)
-                                rospy.loginfo("[%s] Published %s", self.__app_name, join(self._image_folder_left, f_left))
+                                #rospy.loginfo("[%s] Published %s", self.__app_name, join(self._image_folder_left, f_left))
                             else:
                                 rospy.loginfo("[%s] Invalid image file %s", self.__app_name, join(self._image_folder_left, f_left))
 
@@ -89,7 +89,7 @@ class image_folder_publisher:
                                 ros_msg_right.header.frame_id = self._frame_id
                                 ros_msg_right.header.stamp = ros_msg_left.header.stamp
                                 self._image_publisher_right.publish(ros_msg_right)
-                                rospy.loginfo("[%s] Published %s", self.__app_name, join(self._image_folder_right, f_right))
+                                #rospy.loginfo("[%s] Published %s", self.__app_name, join(self._image_folder_right, f_right))
                             else:
                                 rospy.loginfo("[%s] Invalid image file %s", self.__app_name, join(self._image_folder_right, f_right))
                         
