@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(image_transport_tutorial)
+project(depth_image_gen)
 
 find_package(catkin REQUIRED COMPONENTS cv_bridge image_transport message_generation sensor_msgs)
 
@@ -21,13 +21,13 @@ add_dependencies(my_publisher ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPOR
 target_link_libraries(my_publisher ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 # add the subscriber example
-add_executable(my_subscriber src/my_subscriber.cpp)
-add_dependencies(my_subscriber ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
-target_link_libraries(my_subscriber ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+add_executable(depth_image_gen src/depth_image_gen.cpp)
+add_dependencies(depth_image_gen ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
+target_link_libraries(depth_image_gen ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 
 # Mark executables and/or libraries for installation
-install(TARGETS my_publisher my_subscriber 
+install(TARGETS my_publisher depth_image_gen 
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
