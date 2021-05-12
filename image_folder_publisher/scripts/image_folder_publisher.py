@@ -47,7 +47,7 @@ class image_folder_publisher:
         self._frame_id = rospy.get_param('~frame_id', 'camera')
         rospy.loginfo("[%s] (frame_id) Frame ID set to  %s", self.__app_name, self._frame_id)
 
-        self._loop = rospy.get_param('~loop', 1)
+        self._loop = rospy.get_param('~loop', -1)
         rospy.loginfo("[%s] (loop) Loop  %d time(s) (set it -1 for infinite)", self.__app_name, self._loop)
 
         self._image_folder_left = rospy.get_param('~image_folder_left', '')

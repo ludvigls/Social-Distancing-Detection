@@ -1,10 +1,11 @@
 <launch>
     <arg name="slam" default="true" doc="launches rtabmap"/>
+    <arg name="rviz" default="true" doc="launches rviz with social_distancing.rviz config file"/>
 
     <!-- SLAM -->
     <group if="$(arg slam)">
         <include file="$(find rtabmap_ros)/launch/stereo_mapping.launch">
-            <arg name="rviz" value="true"/>
+            <arg name="rviz" value="false"/>
             <arg name="rtabmapviz" value="false"/>
         </include>
     </group>
@@ -27,5 +28,10 @@
 
     <!-- Object detection (BIRK)-->
     <node pkg="object_3d_placement" type="object_detector.py" name="object_detector"/>
+
+    <!-- RVIZ -->
+    <group if="$(arg rviz)">
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find object_3d_placement)/params/social_distancing.rviz"/>
+    </group>
 
 </launch>
