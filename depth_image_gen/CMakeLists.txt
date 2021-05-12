@@ -16,9 +16,9 @@ find_package(OpenCV)
 include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
 
 # add the publisher example
-add_executable(my_publisher src/my_publisher.cpp)
-add_dependencies(my_publisher ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
-target_link_libraries(my_publisher ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+add_executable(stereo_subscriber src/stereo_subscriber.cpp)
+add_dependencies(stereo_subscriber ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
+target_link_libraries(stereo_subscriber ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 # add the subscriber example
 add_executable(depth_image_gen src/depth_image_gen.cpp)
@@ -27,7 +27,7 @@ target_link_libraries(depth_image_gen ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 
 # Mark executables and/or libraries for installation
-install(TARGETS my_publisher depth_image_gen 
+install(TARGETS stereo_subscriber depth_image_gen 
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
