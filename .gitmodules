@@ -1,0 +1,12 @@
+[submodule "Pose2Seg"]
+	path = Pose2Seg
+	url = https://github.com/liruilong940607/Pose2Seg.git
+[submodule "cocoapi"]
+	path = cocoapi
+	url = https://github.com/cocodataset/cocoapi.git
+[submodule "pytorch_objectdetecttrack"]
+	path = pytorch_objectdetecttrack
+	url = https://github.com/cfotache/pytorch_objectdetecttrack.git
+[submodule "mmpose"]
+	path = mmpose
+	url = https://github.com/open-mmlab/mmpose.git
