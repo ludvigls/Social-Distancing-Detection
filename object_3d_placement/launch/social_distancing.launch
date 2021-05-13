@@ -1,6 +1,10 @@
 <launch>
     <arg name="slam" default="false" doc="launches rtabmap"/>
     <arg name="rviz" default="true" doc="launches rviz with social_distancing.rviz config file"/>
+    <arg name="stereo_image_proc" default="true" doc="publishes disparity images from stereo"/>
+    <arg name="left_topic" default="stereo/left/image_raw"/> <!-- /left_image-->
+    <arg name="right_topic" default="stereo/right/image_raw"/>
+
 
     <!-- SLAM -->
     <group if="$(arg slam)">
@@ -14,17 +18,13 @@
     <node name="image_folder_publisher" pkg="image_folder_publisher" type="image_folder_publisher.py">
         <param name="image_folder_left" value="$(find image_folder_publisher)/data/image_00/data" />
         <param name="image_folder_right" value="$(find image_folder_publisher)/data/image_01/data" />
-        <param name="topic_name_left" value="/left_image" />
-        <param name="topic_name_right" value="/right_image" />
-        <param name="publish_rate" value="15" />
+        <param name="topic_name_left" value="$(arg left_topic)"/>
+        <param name="topic_name_right" value="$(arg right_topic)"/>
+        <param name="publish_rate" value="30" />
     </node>
 
     <!-- Object 3d placement -->
     <node pkg="object_3d_placement" type="object_placer.py" name="object_placer"/>
-
-
-    <!-- Depth image generator -->
-    <!-- <node pkg="depth_image_gen" type="depth_image_gen" name="depth_image_gen"/> -->
 
     <!-- Object detection (BIRK)-->
     <node pkg="object_3d_placement" type="object_detector.py" name="object_detector"/>
@@ -33,5 +33,14 @@
     <group if="$(arg rviz)">
         <node name="rviz" pkg="rviz" type="rviz" args="-d $(find object_3d_placement)/params/social_distancing.rviz"/>
     </group>
+
+    <!-- Depth image generator -->
+    <!-- <node ns="stereo" pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc">
+    </node> -->
+
+    <!-- roslaunch stereo_image_proc stereo_image_proc.launch manager:=HVAA -->
+    <!-- <include file="$(find stereo_image_proc)/launch/stereo_image_proc.launch">
+        <arg name="manager" value="stereo" />
+    </include> -->
 
 </launch>

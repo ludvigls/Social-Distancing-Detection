@@ -12,7 +12,7 @@ from os.path import isfile, join
 import rospy
 import cv2
 
-from sensor_msgs.msg import Image
+from sensor_msgs.msg import Image,CameraInfo
 from cv_bridge import CvBridge, CvBridgeError
 
 class image_folder_publisher:
@@ -37,6 +37,8 @@ class image_folder_publisher:
         #Declear image publisher left and right
         self._image_publisher_left = rospy.Publisher(self._topic_name_left, Image, queue_size=1)
         self._image_publisher_right = rospy.Publisher(self._topic_name_right, Image, queue_size=1)
+        self._info_publisher_left=rospy.Publisher('stereo/left/camera_info',CameraInfo,queue_size=1)
+        self._info_publisher_right=rospy.Publisher('stereo/right/camera_info',CameraInfo,queue_size=1)
 
         self._rate = rospy.get_param('~publish_rate', 1)
         rospy.loginfo("[%s] (publish_rate) Publish rate set to %s hz", self.__app_name, self._rate)
@@ -77,6 +79,15 @@ class image_folder_publisher:
                                 ros_msg_left.header.frame_id = self._frame_id
                                 ros_msg_left.header.stamp = rospy.Time.now()
                                 self._image_publisher_left.publish(ros_msg_left)
+                                info=CameraInfo()
+                                info.header=ros_msg_left.header
+                                info.distortion_model='plumb_bob'
+                                info.height=480
+                                info.width=640
+                                info.K=[499.9227269272732,0,319.5850778985193,0,499.6147788074767,247.3568676189872,0,0,1]
+                                info.D=[-0.228883043479116,0.118796892493508,0, 0.000000000000000,0.000000000000000]
+                                info.R=[1,0,0,0,1,0,0,0,1]
+                                self._info_publisher_left.publish(info)
                                 #rospy.loginfo("[%s] Published %s", self.__app_name, join(self._image_folder_left, f_left))
                             else:
                                 rospy.loginfo("[%s] Invalid image file %s", self.__app_name, join(self._image_folder_left, f_left))
@@ -89,6 +100,18 @@ class image_folder_publisher:
                                 ros_msg_right.header.frame_id = self._frame_id
                                 ros_msg_right.header.stamp = ros_msg_left.header.stamp
                                 self._image_publisher_right.publish(ros_msg_right)
+                                info=CameraInfo()
+                                info.header=ros_msg_right.header
+                                info.distortion_model='plumb_bob'
+                                info.height=480
+                                info.width=640
+                                info.K=[499.6548110675932,0,307.8663666109500,0,499.2777002132757,233.8908754867127,0,0,1]
+                                info.D=[-0.233667402919539,0.132068238932958 ,0,0.000000000000000,0.000000000000000] # TODO, inserted 0 in middle, probably wrong
+                                info.R=[ 0.994722424575135   ,      0.008271026929669    ,    0.102268705677217,
+                                        -0.008805703908382   ,      0.999949814849582    ,     0.004777798757326,
+                                        -0.102224056004653   ,     -0.005653131505306    ,    0.994745336494794]
+                                self._info_publisher_right.publish(info)
+
                                 #rospy.loginfo("[%s] Published %s", self.__app_name, join(self._image_folder_right, f_right))
                             else:
                                 rospy.loginfo("[%s] Invalid image file %s", self.__app_name, join(self._image_folder_right, f_right))
