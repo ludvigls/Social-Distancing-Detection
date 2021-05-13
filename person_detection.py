@@ -5,7 +5,7 @@ import torch
 import numpy as np
 import random
 import matplotlib.patches as patches
-classes = utils.load_classes("pytorch_objectdetecttrack/config/coco.names")
+classes = utils.load_classes("config/coco.names")
 
 conf_thres=0.5
 nms_thres=0.4

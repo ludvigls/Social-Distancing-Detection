@@ -4,14 +4,14 @@ from Pose2Seg.modeling.build_model import Pose2Seg
 from os.path import join
 from torchvision import transforms,datasets
 from torch.autograd import Variable
-from pytorch_objectdetecttrack.models import Darknet
-import pytorch_objectdetecttrack.utils.utils as utils
+from models import Darknet
+import utils.utils as utils
 from mmpose.models.detectors import BottomUp
 
 PATH_TO_MODEL_DICT = "DeepModels/"
-config_path='pytorch_objectdetecttrack/config/yolov3.cfg'
-weights_path='pytorch_objectdetecttrack/config/yolov3.weights'
-class_path='pytorch_objectdetecttrack/config/coco.names'
+config_path='config/yolov3.cfg'
+weights_path='config/yolov3.weights'
+class_path='config/coco.names'
 
 
 
