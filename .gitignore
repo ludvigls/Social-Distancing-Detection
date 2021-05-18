@@ -121,6 +121,8 @@ venv.bak/
 /site
 
 # mypy
+.cmake
+.make
 .mypy_cache/
 .dmypy.json
 dmypy.json
