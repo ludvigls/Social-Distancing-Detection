@@ -65,32 +65,8 @@ void findXY(Person &person){
 
   person.x=person.z*sin(deg_u);
   person.y=person.z*sin(deg_v);
-
-  std::cout << person.x << " " << person.y << " " << person.z << " " << std::endl;
-  /*def find_dist_obj_camera(u,v, depth_image, FOV_x, FOV_y):
-    w = depth_image.width
-    h = depth_image.height
-
-    #TODO, we are dealing with a left hand coordinate system (u,v,z) --> (x,y,z), Is this okay?
-    
-    #normalize image frame coordinate system, such that middle of image is origo
-    u_tilde = (u-w/2) # x, left hand coord
-    v_tilde = (v-h/2) # y, right hand coord
-
-    z_obj = find_depth_at(depth_image, u,v)
-
-    #TODO, NB! This assumes a linear relationship, which likely isnt the case
-    delta_deg_v = FOV_horizont / w #Degrees if FOV is given in degrees
-    delta_deg_u = FOV_vertical / h 
-
-    deg_v = delta_deg_v*v_tilde #Horizontal
-    deg_u = delta_deg_u*u_tilde #Vertical
-
-    x_obj = z_obj*np.tan(deg_u)
-    y_obj = z_obj*np.tan(deg_v)
-
-    return (x_obj, y_obj, z_obj)*/
 }
+
 void lab7()
 {
   
@@ -98,8 +74,6 @@ void lab7()
 	Json::Reader reader;
 	Json::Value obj;
 	reader.parse(ifs, obj);
-
-
 
   // TODO 0: Fill in correct paths to the kitti dataset.
   const std::string dataset_path{"2011_09_28_drive_0045_extract/2011_09_28/2011_09_28_drive_0045_extract"};
@@ -118,7 +92,7 @@ void lab7()
   const std::string matching_win{"Stereo matching"};
   const std::string depth_win{"Stereo depth"};
   const std::string dense_win{"Dense disparity"};
-  cv::namedWindow(matching_win, cv::WINDOW_NORMAL);
+  // cv::namedWindow(matching_win, cv::WINDOW_NORMAL);
   cv::namedWindow(depth_win, cv::WINDOW_NORMAL);
   cv::namedWindow(dense_win, cv::WINDOW_NORMAL);
   
@@ -127,7 +101,7 @@ void lab7()
   std::vector<std::vector<int>> mat {{212, 270}, {584, 270}, {497, 267}, {352, 261}, {142, 260}};
   points["image_00000005_0.png"]=mat;
   */
-  Viewer3D viewer_3d;
+  //Viewer3D viewer_3d;
 
   for (int i = 0;i<10000;i++)
   {
@@ -139,8 +113,8 @@ void lab7()
     const StereoPair stereo_rectified = calibration.rectify(stereo_raw);
 
     // Add frustums to the 3D visualization
-    viewer_3d.addCameraFrustum("Camera-frustum-left",  calibration.K_left(),  stereo_rectified.left);
-    viewer_3d.addCameraFrustum("Camera-frustum-right", calibration.K_right(), stereo_rectified.right, calibration.pose());
+    //viewer_3d.addCameraFrustum("Camera-frustum-left",  calibration.K_left(),  stereo_rectified.left);
+    //viewer_3d.addCameraFrustum("Camera-frustum-right", calibration.K_right(), stereo_rectified.right, calibration.pose());
 
     // Perform sparse matching.
     // TODO (1/7): Make SparseStereoMatcher::extractGoodMatches() better!
@@ -148,8 +122,8 @@ void lab7()
     stereo_matcher.match(stereo_rectified);
 
     // Visualize matched point correspondences
-    const cv::Mat match_image = visualizeMatches(stereo_rectified, stereo_matcher);
-    cv::imshow(matching_win, match_image);
+    //const cv::Mat match_image = visualizeMatches(stereo_rectified, stereo_matcher);
+    //cv::imshow(matching_win, match_image);
 
     // Get points with disparities.
 
@@ -165,6 +139,17 @@ void lab7()
       const auto dense_disparity = dense_matcher.compute(stereo_rectified);
       cv::Mat dense_depth = calibration.f() * (calibration.baseline() / dense_disparity); // dense_disparity;
 
+      //Viz dense depth image
+      constexpr float max_depth = 50.f;
+      dense_depth.setTo(0, (dense_disparity < 0) | (dense_depth > max_depth));
+      dense_depth /= max_depth;
+
+      cv::cvtColor(dense_depth, dense_depth, cv::COLOR_GRAY2BGR);
+      dense_depth.convertTo(dense_depth, CV_8U, 255);
+      cv::applyColorMap(dense_depth, dense_depth, cv::COLORMAP_JET);
+
+      cv::imshow(dense_win, dense_depth);
+
       cv::Size s = dense_depth.size();
       //std::cout<<s.height<<std::endl;
       //std::cout<<s.width<<std::endl;
@@ -178,7 +163,7 @@ void lab7()
       else {
         file_name="image_00000"+std::to_string(i)+"_0.png";
       }
-      std::cout<<file_name<<std::endl;
+      //std::cout<<file_name<<std::endl;
       for (auto& point : obj[file_name]){
         const int u=static_cast<int>(std::round(point[0].asInt()));
         const int v=static_cast<int>(std::round(point[1].asInt()));
@@ -267,7 +252,7 @@ void lab7()
     */
     }
     
-    viewer_3d.spinOnce();
+    //viewer_3d.spinOnce();
 
     if (cv::waitKey(1) >= 0)
     { break; }
