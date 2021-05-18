@@ -45,10 +45,22 @@ iostream
 -
 cmath
 -
+vector
+-
+map
+-
+sstream
+-
+fstream
+-
+typeinfo
+-
 
 /home/ludvig/catkin_ws/src/Social-Distancing-TEK5030/lab_07/lab_7.h
 opencv2/core.hpp
 /home/ludvig/catkin_ws/src/Social-Distancing-TEK5030/lab_07/opencv2/core.hpp
+jsoncpp/json/json.h
+-
 
 /home/ludvig/catkin_ws/src/Social-Distancing-TEK5030/lab_07/sparse_stereo_matcher.h
 tek5030/stereo_pair.h

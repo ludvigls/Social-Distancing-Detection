@@ -5,7 +5,6 @@
 #include "viewer_3d.h"
 #include "visualization.h"
 #include "tek5030/kitti_camera.h"
-
 #include "opencv2/calib3d.hpp"
 #include "opencv2/highgui.hpp"
 #include "opencv2/imgproc.hpp"
@@ -14,9 +13,14 @@
 #include <math.h>       /* tan */
 #include <iostream>
 #include <cmath>
+#include <vector>
+#include <map>
+#include <sstream>
+#include <fstream>
+
 using namespace tek5030;
 float dist(const Person &person1,const Person &person2){
-  return pow(pow(person1.x-person2.x,2)+pow(person2.x+person2.y,2)+pow(person1.z+person2.z,2),1/2.0);
+  return pow(pow(person1.x-person2.x,2)+pow(person1.y+person2.y,2)+pow(person1.z+person2.z,2),1/2.0);
 }
 void addColor(std::vector<Person> &persons){
   
@@ -89,6 +93,14 @@ void findXY(Person &person){
 }
 void lab7()
 {
+  
+  std::ifstream ifs("points.json");
+	Json::Reader reader;
+	Json::Value obj;
+	reader.parse(ifs, obj);
+
+
+
   // TODO 0: Fill in correct paths to the kitti dataset.
   const std::string dataset_path{"2011_09_28_drive_0045_extract/2011_09_28/2011_09_28_drive_0045_extract"};
   const std::string calib_path{"2011_09_28_calib/2011_09_28"};
@@ -109,11 +121,18 @@ void lab7()
   cv::namedWindow(matching_win, cv::WINDOW_NORMAL);
   cv::namedWindow(depth_win, cv::WINDOW_NORMAL);
   cv::namedWindow(dense_win, cv::WINDOW_NORMAL);
-
+  
+  /*
+  std::map<std::string, std::vector<std::vector<int>>> points; 
+  std::vector<std::vector<int>> mat {{212, 270}, {584, 270}, {497, 267}, {352, 261}, {142, 260}};
+  points["image_00000005_0.png"]=mat;
+  */
   Viewer3D viewer_3d;
-  for (;;)
+
+  for (int i = 0;i<10000;i++)
   {
-    // Grab raw images
+  
+
     const StereoPair stereo_raw = camera.getStereoPair();
 
     // Rectify images.
@@ -133,6 +152,7 @@ void lab7()
     cv::imshow(matching_win, match_image);
 
     // Get points with disparities.
+
     if (!stereo_matcher.point_disparities().empty())
     {
       cv::Mat visualized_depths;
@@ -146,11 +166,32 @@ void lab7()
       cv::Mat dense_depth = calibration.f() * (calibration.baseline() / dense_disparity); // dense_disparity;
 
       cv::Size s = dense_depth.size();
-      std::cout<<s.height<<std::endl;
-      std::cout<<s.width<<std::endl;
+      //std::cout<<s.height<<std::endl;
+      //std::cout<<s.width<<std::endl;
 
       std::vector<Person> persons;
-
+      std::string file_name;
+      if (i<10){
+        file_name="image_0000000"+std::to_string(i)+"_0.png";}
+      else if (i<100){
+        file_name="image_000000"+std::to_string(i)+"_0.png";}
+      else {
+        file_name="image_00000"+std::to_string(i)+"_0.png";
+      }
+      std::cout<<file_name<<std::endl;
+      for (auto& point : obj[file_name]){
+        const int u=static_cast<int>(std::round(point[0].asInt()));
+        const int v=static_cast<int>(std::round(point[1].asInt()));
+        //const auto disparity = d_vec[2];
+        const auto depth =  calibration.f() * (calibration.baseline() / dense_depth.at<float>(v,u)); //u and v had to switch places, dont ask me why
+        Person person;
+        person.u=u;
+        person.v=v;
+        person.z=depth;
+        findXY(person);
+        persons.push_back(person);
+      }
+      /*
       for (const auto& d_vec : stereo_matcher.point_disparities())
       {
         const int u=static_cast<int>(std::round(d_vec[0]));
@@ -164,6 +205,7 @@ void lab7()
         findXY(person);
         persons.push_back(person);
       }
+      */
       /*
       Person person;
       person.u=200;

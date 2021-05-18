@@ -12,6 +12,8 @@ endif ()
 find_package(OpenCV 4 CONFIG REQUIRED)
 find_package(tek5030 CONFIG REQUIRED)
 
+find_package(jsoncpp CONFIG REQUIRED)
+
 add_executable(${PROJECT_NAME}
   cv_stereo_matcher_wrap.h
   lab_7.h
@@ -33,6 +35,9 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
   ${OpenCV_LIBS}
   tek5030::tek5030
   )
+#target_link_libraries(${PROJECT_NAME} PRIVATE jsoncpp_object jsoncpp_static)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE jsoncpp)
 
 target_compile_options(${PROJECT_NAME} PRIVATE ${compiler_options})
 set_target_properties(${PROJECT_NAME} PROPERTIES
