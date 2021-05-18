@@ -14,6 +14,10 @@
 #include <math.h>       /* tan */
 #include <iostream>
 #include <cmath>
+
+#include <fstream>
+#include <jsoncpp/json/json.h>
+
 using namespace tek5030;
 float dist(const Person &person1,const Person &person2){
   return pow(pow(person1.x-person2.x,2)+pow(person2.x+person2.y,2)+pow(person1.z+person2.z,2),1/2.0);
@@ -58,6 +62,12 @@ void findXY(Person &person){
 
   person.x=person.z*tan(deg_u);
   person.y=person.x*tan(deg_v);
+
+  std::ifstream ifs("profile.json");
+  Json::Reader reader;
+  Json::Value obj;
+  reader.parse(ifs, obj);
+  std::cout << obj["l"].asString() << std::endl;
   /*def find_dist_obj_camera(u,v, depth_image, FOV_x, FOV_y):
     w = depth_image.width
     h = depth_image.height
