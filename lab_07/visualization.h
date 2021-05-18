@@ -15,4 +15,4 @@ cv::Mat visualizeMatches(const tek5030::StereoPair& stereo_pair, const SparseSte
 /// \param visualized_depth The image to draw on
 /// \param pos The pixel position of the depth measurement
 /// \param depth The depth value
-void addDepthPoint(cv::Mat& visualized_depth, const cv::Point& pos, double depth,cv::Scalar color);
+void addDepthPoint(cv::Mat& visualized_depth, const cv::Point& pos, double depth,cv::Scalar color,float dist_nearest_person);

@@ -25,7 +25,7 @@ float dist(const Person &person1,const Person &person2){
 void addColor(std::vector<Person> &persons){
   
       for(auto it = std::begin(persons); it != std::end(persons); ++it) {
-        float min_dist = 10000;
+        float min_dist = 100000;
         for(auto it_inner = it; it_inner != std::end(persons); ++it_inner){
           if (abs(it->u-it_inner->u)>1 && abs(it->v-it_inner->v)>1){
             float dist_i=dist(*it,*it_inner);
@@ -34,15 +34,16 @@ void addColor(std::vector<Person> &persons){
             }
           }
         }
-        if  (min_dist>2.0){
+        if  (min_dist>2000.0){
           it->color=cv::viz::Color::green();
         } 
-        else if (min_dist>1.0){
+        else if (min_dist>1000.0){
           it->color=cv::viz::Color::yellow();
         }
         else{
           it->color=cv::viz::Color::red();
         }
+        it->dist_nearest_person=min_dist/1000;
       }
       
 }
@@ -226,7 +227,7 @@ void lab7()
         const cv::Point pixel_pos{
            it->u,it->v
         };
-        addDepthPoint(visualized_depths, pixel_pos,it->z,it->color);        // TODO (5/7): Get point intensity from corresponding pixel in stereo_rectified.left.
+        addDepthPoint(visualized_depths, pixel_pos,it->z,it->color,it->dist_nearest_person);        // TODO (5/7): Get point intensity from corresponding pixel in stereo_rectified.left.
         //point_colors.push_back(stereo_rectified.left.at<uint8_t>(it->u, it->v));
       }
       
