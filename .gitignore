@@ -127,3 +127,23 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+*.cmake
+
+*.make
+
+*.includecache
+
+*.o
+
+lab_07/CMakeFiles/lab_7_stereo.dir/link.txt
+
+lab_07/CMakeFiles/Makefile2
+
+*.txt
+
+lab_07/lab_7_stereo
+
+lab_07/Makefile
+
+*.internal
