@@ -36,20 +36,20 @@ StereoCalibration::StereoCalibration(const std::string& intrinsic_filename,
 
 
 
-StereoCalibration::StereoCalibration(cv::Mat K_l, cv::Mat d_l, cv::Mat K_r, cv::Mat d_r, 
-                                     cv::Mat R, cv::Mat t, 
-                                     const cv::Size& img_size)
-    : img_size_{img_size}, // initialization list
-      K_left_{K_l},
-      distortion_left_{d_l},
-      K_right_{K_r},
-      distortion_right_{d_r},
-      R_{R},
-      t_{t}
+// StereoCalibration::StereoCalibration(cv::Mat K_l, cv::Mat d_l, cv::Mat K_r, cv::Mat d_r, 
+//                                      cv::Mat R, cv::Mat t, 
+//                                      const cv::Size& img_size)
+//     : img_size_{img_size}, // initialization list
+//       K_left_{K_l},
+//       distortion_left_{d_l},
+//       K_right_{K_r},
+//       distortion_right_{d_r},
+//       R_{R},
+//       t_{t}
 
-{
-  computeRectificationMapping();
-}
+// {
+//   computeRectificationMapping();
+// }
 
 
 

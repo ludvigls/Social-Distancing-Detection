@@ -39,7 +39,6 @@ CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/ope
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/opencv4/opencv2/dnn/dnn.hpp
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/opencv4/opencv2/dnn/layer.hpp
-CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/opencv4/opencv2/dnn/version.hpp
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/opencv4/opencv2/features2d.hpp
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/opencv4/opencv2/flann.hpp
@@ -92,7 +91,6 @@ CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/ope
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/opencv4/opencv2/stereo.hpp
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/opencv4/opencv2/stereo/descriptor.hpp
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/opencv4/opencv2/stereo/matching.hpp
-CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/opencv4/opencv2/stereo/quasi_dense_stereo.hpp
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/opencv4/opencv2/stitching.hpp
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/opencv4/opencv2/stitching/detail/blenders.hpp
 CMakeFiles/lab_7_stereo.dir/cv_stereo_matcher_wrap.cpp.o: /usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp
@@ -175,7 +173,6 @@ CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/dnn/
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/dnn/dnn.hpp
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/dnn/layer.hpp
-CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/dnn/version.hpp
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/features2d.hpp
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/flann.hpp
@@ -228,7 +225,6 @@ CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/shap
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/stereo.hpp
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/stereo/descriptor.hpp
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/stereo/matching.hpp
-CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/stereo/quasi_dense_stereo.hpp
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/stitching.hpp
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/stitching/detail/blenders.hpp
 CMakeFiles/lab_7_stereo.dir/lab_7.cpp.o: /usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp
@@ -306,7 +302,6 @@ CMakeFiles/lab_7_stereo.dir/main.cpp.o: /usr/local/include/opencv4/opencv2/dnn/d
 CMakeFiles/lab_7_stereo.dir/main.cpp.o: /usr/local/include/opencv4/opencv2/dnn/dnn.hpp
 CMakeFiles/lab_7_stereo.dir/main.cpp.o: /usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp
 CMakeFiles/lab_7_stereo.dir/main.cpp.o: /usr/local/include/opencv4/opencv2/dnn/layer.hpp
-CMakeFiles/lab_7_stereo.dir/main.cpp.o: /usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
 CMakeFiles/lab_7_stereo.dir/main.cpp.o: /usr/local/include/opencv4/opencv2/dnn/version.hpp
 CMakeFiles/lab_7_stereo.dir/main.cpp.o: /usr/local/include/opencv4/opencv2/features2d.hpp
 CMakeFiles/lab_7_stereo.dir/main.cpp.o: /usr/local/include/opencv4/opencv2/flann.hpp
@@ -433,7 +428,6 @@ CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o: /usr/local/include/open
 CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o: /usr/local/include/opencv4/opencv2/dnn/dnn.hpp
 CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o: /usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp
 CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o: /usr/local/include/opencv4/opencv2/dnn/layer.hpp
-CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o: /usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
 CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o: /usr/local/include/opencv4/opencv2/dnn/version.hpp
 CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o: /usr/local/include/opencv4/opencv2/features2d.hpp
 CMakeFiles/lab_7_stereo.dir/sparse_stereo_matcher.cpp.o: /usr/local/include/opencv4/opencv2/flann.hpp
@@ -560,7 +554,6 @@ CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o: /usr/local/include/opencv4
 CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o: /usr/local/include/opencv4/opencv2/dnn/dnn.hpp
 CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o: /usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp
 CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o: /usr/local/include/opencv4/opencv2/dnn/layer.hpp
-CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o: /usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
 CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o: /usr/local/include/opencv4/opencv2/dnn/version.hpp
 CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o: /usr/local/include/opencv4/opencv2/features2d.hpp
 CMakeFiles/lab_7_stereo.dir/stereo_calibration.cpp.o: /usr/local/include/opencv4/opencv2/flann.hpp
@@ -687,7 +680,6 @@ CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o: /usr/local/include/opencv4/opencv2/
 CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o: /usr/local/include/opencv4/opencv2/dnn/dnn.hpp
 CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o: /usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp
 CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o: /usr/local/include/opencv4/opencv2/dnn/layer.hpp
-CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o: /usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
 CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o: /usr/local/include/opencv4/opencv2/dnn/version.hpp
 CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o: /usr/local/include/opencv4/opencv2/features2d.hpp
 CMakeFiles/lab_7_stereo.dir/viewer_3d.cpp.o: /usr/local/include/opencv4/opencv2/flann.hpp
@@ -815,7 +807,6 @@ CMakeFiles/lab_7_stereo.dir/visualization.cpp.o: /usr/local/include/opencv4/open
 CMakeFiles/lab_7_stereo.dir/visualization.cpp.o: /usr/local/include/opencv4/opencv2/dnn/dnn.hpp
 CMakeFiles/lab_7_stereo.dir/visualization.cpp.o: /usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp
 CMakeFiles/lab_7_stereo.dir/visualization.cpp.o: /usr/local/include/opencv4/opencv2/dnn/layer.hpp
-CMakeFiles/lab_7_stereo.dir/visualization.cpp.o: /usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
 CMakeFiles/lab_7_stereo.dir/visualization.cpp.o: /usr/local/include/opencv4/opencv2/dnn/version.hpp
 CMakeFiles/lab_7_stereo.dir/visualization.cpp.o: /usr/local/include/opencv4/opencv2/features2d.hpp
 CMakeFiles/lab_7_stereo.dir/visualization.cpp.o: /usr/local/include/opencv4/opencv2/flann.hpp

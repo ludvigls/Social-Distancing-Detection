@@ -1,4 +1,4 @@
-# Install script for directory: /home/nadia/Documents/skole stuff/MaskinsynUiO/labs/lab_07
+# Install script for directory: /home/ludvig/catkin_ws/src/Social-Distancing-TEK5030/lab_07
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/nadia/Documents/skole stuff/MaskinsynUiO/labs/lab_07/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ludvig/catkin_ws/src/Social-Distancing-TEK5030/lab_07/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

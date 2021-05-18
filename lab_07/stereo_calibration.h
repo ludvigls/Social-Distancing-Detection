@@ -17,9 +17,9 @@ public:
                     const cv::Size& img_size);
 
   
-  StereoCalibration::StereoCalibration(cv::Mat K_l, cv::Mat d_l, cv::Mat K_r, cv::Mat d_r, 
-                                     cv::Mat R, cv::Mat t, 
-                                     const cv::Size& img_size);
+  // StereoCalibration::StereoCalibration(cv::Mat K_l, cv::Mat d_l, cv::Mat K_r, cv::Mat d_r, 
+  //                                    cv::Mat R, cv::Mat t, 
+  //                                    const cv::Size& img_size);
   
   
   /// \brief Load stereo calibration parameters from a RealSense camera.
