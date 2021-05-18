@@ -43,12 +43,15 @@ void addColor(std::vector<Person> &persons){
       
 }
 void findXY(Person &person){
+  // finds the translation between the person and the camera in 3D
+  // input: a person object which has pixel coordinates in 2D
+  // output: modifies the inputted person object to also contain translation between cam and person in 3D
   const float fov_hor=1.57079;
   const float fov_vert=0.61086;
   int width=1392;
   int height=512;
-  int u_tilde=person.u-width/2;
-  int v_tilde=person.v-height/2;
+  int u_tilde=person.u-height/2;
+  int v_tilde=person.v-width/2;
 
   float delta_deg_v=fov_hor/width;
   float delta_deg_u=fov_vert/height;
@@ -56,8 +59,10 @@ void findXY(Person &person){
   float deg_v=delta_deg_v*v_tilde;
   float deg_u=delta_deg_u*u_tilde;
 
-  person.x=person.z*tan(deg_u);
-  person.y=person.x*tan(deg_v);
+  person.x=person.z*sin(deg_u);
+  person.y=person.z*sin(deg_v);
+
+  std::cout << person.x << " " << person.y << " " << person.z << " " << std::endl;
   /*def find_dist_obj_camera(u,v, depth_image, FOV_x, FOV_y):
     w = depth_image.width
     h = depth_image.height
@@ -150,8 +155,8 @@ void lab7()
       {
         const int u=static_cast<int>(std::round(d_vec[0]));
         const int v=static_cast<int>(std::round(d_vec[1]));
-        const auto disparity = d_vec[2];
-        const auto depth =  calibration.f() * (calibration.baseline() / dense_depth.at<float>(v,u)); //u and v had to switch places, dont ask me why
+        // const auto disparity = d_vec[2];
+        const auto depth =  calibration.f() * (calibration.baseline() / dense_depth.at<float>(v,u)); //TODO, u and v had to switch places, dont ask me why
         Person person;
         person.u=u;
         person.v=v;
