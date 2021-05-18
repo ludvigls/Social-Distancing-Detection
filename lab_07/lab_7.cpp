@@ -67,7 +67,7 @@ void findXY(Person &person){
   person.x=person.z*sin(deg_u);
   person.y=person.z*sin(deg_v);
 
-  std::cout << person.x << " " << person.y << " " << person.z << " " << std::endl;
+  //std::cout << person.x << " " << person.y << " " << person.z << " " << std::endl;
   /*def find_dist_obj_camera(u,v, depth_image, FOV_x, FOV_y):
     w = depth_image.width
     h = depth_image.height

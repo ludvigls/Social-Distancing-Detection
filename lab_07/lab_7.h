@@ -16,5 +16,6 @@ class Person {
     float x;
     float y;
     cv::Scalar color;
+    float dist_nearest_person;
 };
 void findXY(Person &person);
