@@ -1,3 +1,3 @@
-/home/ludvig/catkin_ws/src/Social-Distancing-TEK5030/lab_07/CMakeFiles/rebuild_cache.dir
-/home/ludvig/catkin_ws/src/Social-Distancing-TEK5030/lab_07/CMakeFiles/lab_7_stereo.dir
-/home/ludvig/catkin_ws/src/Social-Distancing-TEK5030/lab_07/CMakeFiles/edit_cache.dir
+/home/nadia/catkin_ws/src/Social-Distancing-TEK5030/lab_07/CMakeFiles/rebuild_cache.dir
+/home/nadia/catkin_ws/src/Social-Distancing-TEK5030/lab_07/CMakeFiles/lab_7_stereo.dir
+/home/nadia/catkin_ws/src/Social-Distancing-TEK5030/lab_07/CMakeFiles/edit_cache.dir
