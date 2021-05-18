@@ -88,13 +88,12 @@ void findXY(Person &person){
 }
 void lab7()
 {
-  /*
+  
   std::ifstream ifs("points.json");
 	Json::Reader reader;
 	Json::Value obj;
 	reader.parse(ifs, obj);
-	std::cout << obj["image_00000104_0.png"].asString() <<std::endl;
-*/
+
 
 
   // TODO 0: Fill in correct paths to the kitti dataset.
@@ -118,10 +117,11 @@ void lab7()
   cv::namedWindow(depth_win, cv::WINDOW_NORMAL);
   cv::namedWindow(dense_win, cv::WINDOW_NORMAL);
   
+  /*
   std::map<std::string, std::vector<std::vector<int>>> points; 
   std::vector<std::vector<int>> mat {{212, 270}, {584, 270}, {497, 267}, {352, 261}, {142, 260}};
   points["image_00000005_0.png"]=mat;
-
+  */
   Viewer3D viewer_3d;
 
   for (int i = 0;i<10000;i++)
@@ -174,9 +174,9 @@ void lab7()
         file_name="image_00000"+std::to_string(i)+"_0.png";
       }
       std::cout<<file_name<<std::endl;
-      for (auto& point : points[file_name]){
-        const int u=static_cast<int>(std::round(point[0]));
-        const int v=static_cast<int>(std::round(point[1]));
+      for (auto& point : obj[file_name]){
+        const int u=static_cast<int>(std::round(point[0].asInt()));
+        const int v=static_cast<int>(std::round(point[1].asInt()));
         //const auto disparity = d_vec[2];
         const auto depth =  calibration.f() * (calibration.baseline() / dense_depth.at<float>(v,u)); //u and v had to switch places, dont ask me why
         Person person;
