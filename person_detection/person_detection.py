@@ -7,8 +7,8 @@ import random
 import matplotlib.patches as patches
 classes = utils.load_classes("config/coco.names")
 
-conf_thres=0.5
-nms_thres=0.4
+conf_thres=0.4
+nms_thres=0.3
 
 class BboxDetector:
     def __init__(self, path, img_size=416, use_cuda=True):

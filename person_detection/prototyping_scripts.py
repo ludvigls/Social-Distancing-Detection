@@ -19,11 +19,11 @@ def compute_dataset_bbox():
         centres = detector.get_centroids(image)
         data_dict[name] = centres.tolist()
         # detector.draw_bbox(image)
-        # plt.imshow(image)
-        # plt.scatter(centres[:,0], centres[:,1])
-        # plt.show()
+        plt.imshow(image)
+        plt.scatter(centres[:,0], centres[:,1])
+        plt.show()
     print(data_dict)
-    json.dump(data_dict, open("new_dataset_image_03_detections.json", "w"))
+    # json.dump(data_dict, open("new_dataset_image_03_detections.json", "w"))
 
 
 
