@@ -16,17 +16,18 @@
 #include <map>
 #include <sstream>
 #include <fstream>
-
+#include <unistd.h>
+#include <cstdlib>
 using namespace tek5030;
 float dist(const Person &person1,const Person &person2){
-  return pow(pow(person1.x-person2.x,2)+pow(person1.y+person2.y,2)+pow(person1.z+person2.z,2),1/2.0);
+  return pow(pow(person1.x-person2.x,2)+pow(person1.y-person2.y,2)+pow(person1.z-person2.z,2),1/2.0);
 }
 void addColor(std::vector<Person> &persons){
   
       for(auto it = std::begin(persons); it != std::end(persons); ++it) {
         float min_dist = 10000000;
         for(auto it_inner = it; it_inner != std::end(persons); ++it_inner){
-          if (abs(it->u-it_inner->u)>1 && abs(it->v-it_inner->v)>1){
+          if (abs(it->u-it_inner->u)>0.001 && abs(it->v-it_inner->v)>0.001){
             float dist_i=dist(*it,*it_inner);
             if (dist_i<min_dist){
               min_dist=dist_i;
@@ -52,10 +53,10 @@ void findXYZ(Person &person,const StereoCalibration calibration){
   // output: modifies the inputted person object to also contain translation between cam and person in 3D
   float c_x=calibration.K_left().at<float>(2);
   float c_y=calibration.K_left().at<float>(5);
-  std::cout<<c_x<<std::endl;
+  //std::cout<<c_x<<std::endl;
   float x_over_z=(c_x-person.u)/calibration.f();
   float y_over_z=(c_y-person.v)/calibration.f();
-  person.z=person.z/pow(1.+pow(x_over_z,2)+pow(y_over_z,2),1/2.0);
+  person.z=person.depth/pow(1.+pow(x_over_z,2)+pow(y_over_z,2),1/2.0);
   person.x=x_over_z*person.z;
   person.y=y_over_z*person.z;
 }
@@ -63,7 +64,7 @@ void findXYZ(Person &person,const StereoCalibration calibration){
 void lab7()
 {
   
-  std::ifstream ifs("points1.json");
+  std::ifstream ifs("new_dataset_image_02_detections.json");
 	Json::Reader reader;
 	Json::Value obj;
 	reader.parse(ifs, obj);
@@ -134,7 +135,7 @@ void lab7()
 
       //Viz dense depth image
       //constexpr float max_depth = 50.f;
-      //dense_depth.setTo(0, (dense_disparity < 0) | (dense_depth > max_depth));
+      dense_depth.setTo(0, (dense_disparity < 0)); //| (dense_depth > max_depth));
       //dense_depth /= max_depth;
 
       //cv::cvtColor(dense_depth, dense_depth, cv::COLOR_GRAY2BGR);
@@ -150,11 +151,14 @@ void lab7()
       std::vector<Person> persons;
       std::string file_name;
       if (i<10){
-        file_name="000000000"+std::to_string(i)+".png";}
+        file_name="000000000"+std::to_string(i+1)+".png";}
+      else if (i>35){
+        file_name="00000000"+std::to_string(i+2)+".png";}
       else if (i<100){
-        file_name="00000000"+std::to_string(i)+".png";}
+        file_name="00000000"+std::to_string(i+2)+".png";}
+        
       else {
-        file_name="0000000"+std::to_string(i)+".png";
+        file_name="0000000"+std::to_string(i+2)+".png";
       }
       //std::cout<<file_name<<std::endl;
       for (auto& point : obj[file_name]){
@@ -165,10 +169,10 @@ void lab7()
         Person person;
         person.u=u;
         person.v=v;
-        person.z=dense_depth.at<float>(v,u);
-        std::cout<<"f: "<<calibration.f()<<" baseline"<<calibration.baseline()<<std::endl;
+        person.depth=dense_depth.at<float>(v,u);
+        //std::cout<<"f: "<<calibration.f()<<" baseline"<<calibration.baseline()<<std::endl;
         findXYZ(person,calibration);
-        std::cout<<person.z<<std::endl;
+        //std::cout<<person.z<<std::endl;
 
         persons.push_back(person);
       }
@@ -201,19 +205,25 @@ void lab7()
       persons.push_back(person1);
       */
       addColor(persons);
-      
+      std::cout<<i<<std::endl;
       for(auto it = std::begin(persons); it != std::end(persons); ++it){
-        //std::cout<<it->color<<std::endl;
+  
+        std::cout<<"Dist: "<<it->dist_nearest_person<<"color: "<<it->color<<std::endl;
+        std::cout<<"x: "<<it->x<<"y: "<<it->y<<"z: "<<it->z<<"depth "<<it->depth<<std::endl;
         const cv::Point pixel_pos{
-           it->u,it->v
+           it->u,it->v  
         };
+
         addDepthPoint(visualized_depths, pixel_pos,it->z,it->color,it->dist_nearest_person);        // TODO (5/7): Get point intensity from corresponding pixel in stereo_rectified.left.
         //point_colors.push_back(stereo_rectified.left.at<uint8_t>(it->u, it->v));
       }
-      
       cv::imshow(depth_win, visualized_depths);
 
-      // TODO (4/7): Use cv::perspectiveTransform() to compute the 3D point cloud.
+      if (i==39) {
+        sleep(1000);
+      }
+
+	      // TODO (4/7): Use cv::perspectiveTransform() to compute the 3D point cloud.
       /*
 
       std::vector<cv::Vec3d> world_points(point_colors.size());

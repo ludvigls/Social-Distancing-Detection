@@ -38,10 +38,10 @@ cv::Mat visualizeMatches(const tek5030::StereoPair& stereo_pair, const SparseSte
 
 void addDepthPoint(cv::Mat& visualized_depth, const cv::Point& pos, const double depth,cv::Scalar color,float dist_nearest_person)
 {
-  constexpr int marker_size = 5;
+  constexpr int marker_size = 20;
   cv::drawMarker(visualized_depth, pos, color::green, cv::MARKER_CROSS, marker_size);
   std::stringstream depth_text;
-  depth_text << std::fixed << std::setprecision(2) << depth;
+  depth_text << std::fixed << std::setprecision(2) << dist_nearest_person;//<<" "<<depth;
   cv::putText(visualized_depth,depth_text.str(), pos, font::face, font::scale, color);
   //cv::putText(visualized_depth, depth_text.str(), pos, font::face, font::scale, color::green);
 

@@ -15,6 +15,7 @@ class Person {
     double z;
     float x;
     float y;
+    double depth;//distance from camera
     cv::Scalar color;
     float dist_nearest_person;
 };
