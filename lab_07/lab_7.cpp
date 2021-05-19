@@ -25,7 +25,7 @@ float dist(const Person &person1,const Person &person2){
 void addColor(std::vector<Person> &persons){
   
       for(auto it = std::begin(persons); it != std::end(persons); ++it) {
-        float min_dist = 100000;
+        float min_dist = 10000000;
         for(auto it_inner = it; it_inner != std::end(persons); ++it_inner){
           if (abs(it->u-it_inner->u)>1 && abs(it->v-it_inner->v)>1){
             float dist_i=dist(*it,*it_inner);
@@ -34,16 +34,16 @@ void addColor(std::vector<Person> &persons){
             }
           }
         }
-        if  (min_dist>2000.0){
+        if  (min_dist>2.0){
           it->color=cv::viz::Color::green();
         } 
-        else if (min_dist>1000.0){
+        else if (min_dist>1.0){
           it->color=cv::viz::Color::yellow();
         }
         else{
           it->color=cv::viz::Color::red();
         }
-        it->dist_nearest_person=min_dist/1000;
+        it->dist_nearest_person=min_dist/1.0;
       }
       
 }
@@ -71,7 +71,7 @@ void findXY(Person &person){
 void lab7()
 {
   
-  std::ifstream ifs("points.json");
+  std::ifstream ifs("points1.json");
 	Json::Reader reader;
 	Json::Value obj;
 	reader.parse(ifs, obj);
@@ -92,7 +92,7 @@ void lab7()
 
   const std::string matching_win{"Stereo matching"};
   const std::string depth_win{"Stereo depth"};
-  const std::string dense_win{"Dense disparity"};
+  const std::string dense_win{"Dense depth"};
   // cv::namedWindow(matching_win, cv::WINDOW_NORMAL);
   cv::namedWindow(depth_win, cv::WINDOW_NORMAL);
   cv::namedWindow(dense_win, cv::WINDOW_NORMAL);
@@ -141,15 +141,15 @@ void lab7()
       cv::Mat dense_depth = calibration.f() * (calibration.baseline() / dense_disparity); // dense_disparity;
 
       //Viz dense depth image
-      constexpr float max_depth = 50.f;
-      dense_depth.setTo(0, (dense_disparity < 0) | (dense_depth > max_depth));
-      dense_depth /= max_depth;
+      //constexpr float max_depth = 50.f;
+      //dense_depth.setTo(0, (dense_disparity < 0) | (dense_depth > max_depth));
+      //dense_depth /= max_depth;
 
-      cv::cvtColor(dense_depth, dense_depth, cv::COLOR_GRAY2BGR);
-      dense_depth.convertTo(dense_depth, CV_8U, 255);
-      cv::applyColorMap(dense_depth, dense_depth, cv::COLORMAP_JET);
+      //cv::cvtColor(dense_depth, dense_depth, cv::COLOR_GRAY2BGR);
+      //dense_depth.convertTo(dense_depth, CV_8U, 255);
+      //cv::applyColorMap(dense_depth, dense_depth, cv::COLORMAP_JET);
 
-      cv::imshow(dense_win, dense_depth);
+      //cv::imshow(dense_win, dense_depth);
 
       cv::Size s = dense_depth.size();
       //std::cout<<s.height<<std::endl;
@@ -158,22 +158,24 @@ void lab7()
       std::vector<Person> persons;
       std::string file_name;
       if (i<10){
-        file_name="image_0000000"+std::to_string(i)+"_0.png";}
+        file_name="000000000"+std::to_string(i)+".png";}
       else if (i<100){
-        file_name="image_000000"+std::to_string(i)+"_0.png";}
+        file_name="00000000"+std::to_string(i)+".png";}
       else {
-        file_name="image_00000"+std::to_string(i)+"_0.png";
+        file_name="0000000"+std::to_string(i)+".png";
       }
       //std::cout<<file_name<<std::endl;
       for (auto& point : obj[file_name]){
         const int u=static_cast<int>(std::round(point[0].asInt()));
         const int v=static_cast<int>(std::round(point[1].asInt()));
         //const auto disparity = d_vec[2];
-        const auto depth =  calibration.f() * (calibration.baseline() / dense_depth.at<float>(v,u)); //u and v had to switch places, dont ask me why
+        //const auto depth =  calibration.f() * (calibration.baseline() / dense_depth.at<float>(v,u)); //u and v had to switch places, dont ask me why
         Person person;
         person.u=u;
         person.v=v;
-        person.z=depth;
+        person.z=dense_depth.at<float>(v,u);
+        std::cout<<"f: "<<calibration.f()<<" baseline"<<calibration.baseline()<<std::endl;
+        std::cout<<person.z<<std::endl;
         findXY(person);
         persons.push_back(person);
       }
