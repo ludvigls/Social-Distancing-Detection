@@ -1,7 +1,6 @@
 #include "lab_7.h"
 #include "cv_stereo_matcher_wrap.h"
 #include "sparse_stereo_matcher.h"
-#include "stereo_calibration.h"
 #include "viewer_3d.h"
 #include "visualization.h"
 #include "tek5030/kitti_camera.h"
@@ -47,25 +46,18 @@ void addColor(std::vector<Person> &persons){
       }
       
 }
-void findXY(Person &person){
+void findXYZ(Person &person,const StereoCalibration calibration){
   // finds the translation between the person and the camera in 3D
   // input: a person object which has pixel coordinates in 2D
   // output: modifies the inputted person object to also contain translation between cam and person in 3D
-  const float fov_hor=1.57079;
-  const float fov_vert=0.61086;
-  int width=1392;
-  int height=512;
-  int u_tilde=person.u-height/2;
-  int v_tilde=person.v-width/2;
-
-  float delta_deg_v=fov_hor/width;
-  float delta_deg_u=fov_vert/height;
-
-  float deg_v=delta_deg_v*v_tilde;
-  float deg_u=delta_deg_u*u_tilde;
-
-  person.x=person.z*sin(deg_u);
-  person.y=person.z*sin(deg_v);
+  float c_x=calibration.K_left().at<float>(2);
+  float c_y=calibration.K_left().at<float>(5);
+  std::cout<<c_x<<std::endl;
+  float x_over_z=(c_x-person.u)/calibration.f();
+  float y_over_z=(c_y-person.v)/calibration.f();
+  person.z=person.z/pow(1.+pow(x_over_z,2)+pow(y_over_z,2),1/2.0);
+  person.x=x_over_z*person.z;
+  person.y=y_over_z*person.z;
 }
 
 void lab7()
@@ -175,8 +167,9 @@ void lab7()
         person.v=v;
         person.z=dense_depth.at<float>(v,u);
         std::cout<<"f: "<<calibration.f()<<" baseline"<<calibration.baseline()<<std::endl;
+        findXYZ(person,calibration);
         std::cout<<person.z<<std::endl;
-        findXY(person);
+
         persons.push_back(person);
       }
       /*

@@ -2,7 +2,7 @@
 
 #include "opencv2/core.hpp"
 #include <jsoncpp/json/json.h>
-
+#include "stereo_calibration.h"
 //#include <json/json.h>
 
 /// Perform sparse and dense stereo matching on images captured from a StereoCamera.
@@ -18,4 +18,4 @@ class Person {
     cv::Scalar color;
     float dist_nearest_person;
 };
-void findXY(Person &person);
+void findXYZ(Person &person,const StereoCalibration calibration);
