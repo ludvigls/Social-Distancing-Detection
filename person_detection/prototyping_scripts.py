@@ -5,7 +5,7 @@ from os.path import join
 from tqdm import tqdm
 import json
 import matplotlib.pyplot as plt
-DATASET= "lab_07/2011_09_28_drive_0045_extract/2011_09_28/2011_09_28_drive_0045_extract/image_02/data"
+DATASET= "lab_07/2011_09_28_drive_0045_extract/2011_09_28/2011_09_28_drive_0045_extract/image_01/data"
 def compute_dataset_bbox():
     """
 
@@ -23,7 +23,7 @@ def compute_dataset_bbox():
         # plt.scatter(centres[:,0], centres[:,1])
         # plt.show()
     print(data_dict)
-    json.dump(data_dict, open("new_dataset_image_02_detections.json", "w"))
+    json.dump(data_dict, open("new_dataset_image_01_detections.json", "w"))
 
 
 
