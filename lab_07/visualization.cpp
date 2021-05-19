@@ -41,7 +41,7 @@ void addDepthPoint(cv::Mat& visualized_depth, const cv::Point& pos, const double
   constexpr int marker_size = 5;
   cv::drawMarker(visualized_depth, pos, color::green, cv::MARKER_CROSS, marker_size);
   std::stringstream depth_text;
-  depth_text << std::fixed << std::setprecision(2) << dist_nearest_person;
+  depth_text << std::fixed << std::setprecision(2) << depth;
   cv::putText(visualized_depth,depth_text.str(), pos, font::face, font::scale, color);
   //cv::putText(visualized_depth, depth_text.str(), pos, font::face, font::scale, color::green);
 
