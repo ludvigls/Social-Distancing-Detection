@@ -24,21 +24,26 @@ class image_folder_publisher:
         rospy.loginfo("[%s] Reading images from %s", self.__app_name, img_folder)
 
     def __init__(self):
-        self.__app_name = "image_folder_publisher"
+        self.__app_name = "stereo_image_folder_publisher"
 
         self._cv_bridge = CvBridge()
 
         self._topic_name_left= rospy.get_param('~topic_name_left', '/image_raw')
         self._topic_name_right= rospy.get_param('~topic_name_right', '/image_raw')
+        self._topic_name_depth= rospy.get_param('~topic_name_depth', '/image_raw')
 
-        rospy.loginfo("[%s] (_topic_name_left) Publishing Images to topic  %s", self.__app_name, self._topic_name_left)
+        rospy.loginfo("[%s] (topic_name_left) Publishing Images to topic  %s", self.__app_name, self._topic_name_left)
         rospy.loginfo("[%s] (topic_name_right) Publishing Images to topic  %s", self.__app_name, self._topic_name_right)
+        rospy.loginfo("[%s] (topic_name_depth) Publishing Images to topic  %s", self.__app_name, self._topic_name_depth)
 
         #Declear image publisher left and right
         self._image_publisher_left = rospy.Publisher(self._topic_name_left, Image, queue_size=1)
         self._image_publisher_right = rospy.Publisher(self._topic_name_right, Image, queue_size=1)
-        self._info_publisher_left=rospy.Publisher('stereo/left/camera_info',CameraInfo,queue_size=1)
-        self._info_publisher_right=rospy.Publisher('stereo/right/camera_info',CameraInfo,queue_size=1)
+        self._image_publisher_depth = rospy.Publisher(self._topic_name_depth, Image, queue_size=1)
+
+        self._info_publisher_left=rospy.Publisher('stereo_camera/left/camera_info',CameraInfo,queue_size=1)
+        self._info_publisher_right=rospy.Publisher('stereo_camera/right/camera_info',CameraInfo,queue_size=1)
+        self._info_publisher_depth=rospy.Publisher('stereo_camera/depth/camera_info',CameraInfo,queue_size=1)
 
         self._rate = rospy.get_param('~publish_rate', 1)
         rospy.loginfo("[%s] (publish_rate) Publish rate set to %s hz", self.__app_name, self._rate)
@@ -79,6 +84,15 @@ class image_folder_publisher:
                                 ros_msg_left.header.frame_id = self._frame_id
                                 ros_msg_left.header.stamp = rospy.Time.now()
                                 self._image_publisher_left.publish(ros_msg_left)
+
+
+                                ros_msg_depth = Image()
+
+                                # TODO, Compute depth image from stereo...
+                                # See code from lab7-maskinsyn
+
+                                self._image_publisher_depth.publish(ros_msg_depth)
+
                                 info=CameraInfo()
                                 info.header=ros_msg_left.header
                                 info.distortion_model='plumb_bob'
@@ -88,6 +102,13 @@ class image_folder_publisher:
                                 info.D=[-0.228883043479116,0.118796892493508,0, 0.000000000000000,0.000000000000000]
                                 info.R=[1,0,0,0,1,0,0,0,1]
                                 self._info_publisher_left.publish(info)
+
+
+                                #info_depth = CameraInfo()
+                                #TODO, add calibration params to info_depth and publish onto topic
+
+                                self._info_publisher_depth.publish(info) #TODO, info_depth should be published instead!
+
                                 #rospy.loginfo("[%s] Published %s", self.__app_name, join(self._image_folder_left, f_left))
                             else:
                                 rospy.loginfo("[%s] Invalid image file %s", self.__app_name, join(self._image_folder_left, f_left))
