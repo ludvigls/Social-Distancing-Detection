@@ -26,8 +26,8 @@ void addColor(std::vector<Person> &persons){
   
       for(auto it = std::begin(persons); it != std::end(persons); ++it) {
         float min_dist = 10000000;
-        for(auto it_inner = it; it_inner != std::end(persons); ++it_inner){
-          if (abs(it->u-it_inner->u)>0.001 && abs(it->v-it_inner->v)>0.001){
+        for(auto it_inner = std::begin(persons); it_inner != std::end(persons); ++it_inner){
+          if (abs(it->u-it_inner->u)>0.001 || abs(it->v-it_inner->v)>0.001){
             float dist_i=dist(*it,*it_inner);
             if (dist_i<min_dist){
               min_dist=dist_i;
@@ -43,7 +43,7 @@ void addColor(std::vector<Person> &persons){
         else{
           it->color=cv::viz::Color::red();
         }
-        it->dist_nearest_person=min_dist/1.0;
+        it->dist_nearest_person=min_dist;
       }
       
 }
@@ -220,7 +220,7 @@ void lab7()
       cv::imshow(depth_win, visualized_depths);
 
       if (i==39) {
-        sleep(1000);
+        sleep(100000);
       }
 
 	      // TODO (4/7): Use cv::perspectiveTransform() to compute the 3D point cloud.
