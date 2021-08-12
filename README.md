@@ -1,14 +1,15 @@
 # Social-Distancing-TEK5030
-## TODO
+Built a program where we monitored social distancing using a stereo camera. We used a pre-trained Yolov3 network to detect people and a dense stereo estimator to find their positions in 3D space. Then calculated the shortest distance from a person, to another person. The result was then displayed at the placement of the different people. The picture below show the end result. If you want to see a video, I have attached it in socialdistance.gif.
+ ![socialdist](https://user-images.githubusercontent.com/36857118/129191358-a19b831f-aedc-459d-8073-40d32ca8c7bf.PNG)
 
--[ ] Deep learning
-    - [x] Pose2Seg
-    - [x] YOLO bbox
-    - [ ] bottom-up pose estimation 
--[ ] Tracking
-    - [x] SORT implementation (found premade)
-    - [ ] SORT integration
-    - [ ] Image-series tracking
-    - [ ] Video tracking (?)
--[ ] 3D projection
+## Running
+Can be built using
+```
+make 
+```
+In the lab_7 folder.
+Then ran using
+```
+./lab_7
+```
 
