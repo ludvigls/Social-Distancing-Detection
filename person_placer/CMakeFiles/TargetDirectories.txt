@@ -1,0 +1,3 @@
+/home/ludvig/Social-Distancing-TEK5030/person_placer/CMakeFiles/rebuild_cache.dir
+/home/ludvig/Social-Distancing-TEK5030/person_placer/CMakeFiles/person_placer.dir
+/home/ludvig/Social-Distancing-TEK5030/person_placer/CMakeFiles/edit_cache.dir
