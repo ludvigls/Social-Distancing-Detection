@@ -1,9 +1,9 @@
-#include "lab_7.h"
+#include "social_distancing.h"
 #include <iostream>
 
 int main() try
 {
-  lab7();
+  socialDistancing();
 
   return EXIT_SUCCESS;
 }

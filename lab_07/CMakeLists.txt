@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5.1)
-project(lab_7_stereo)
+project(social_distancing)
 
 if(MSVC)
   set(compiler_options /W4)
@@ -16,13 +16,13 @@ find_package(jsoncpp CONFIG REQUIRED)
 
 add_executable(${PROJECT_NAME}
   cv_stereo_matcher_wrap.h
-  lab_7.h
+  social_distancing.h
   sparse_stereo_matcher.h
   stereo_calibration.h
   viewer_3d.h
   visualization.h
   #
-  lab_7.cpp
+  social_distancing.cpp
   main.cpp
   sparse_stereo_matcher.cpp
   stereo_calibration.cpp

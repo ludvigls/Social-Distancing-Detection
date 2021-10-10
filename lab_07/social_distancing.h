@@ -6,7 +6,7 @@
 //#include <json/json.h>
 
 /// Perform sparse and dense stereo matching on images captured from a StereoCamera.
-void lab7();
+void socialDistancing();
 
 class Person {
   public:
